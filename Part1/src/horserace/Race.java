@@ -82,8 +82,6 @@ public class Race
             moveHorse(lane2Horse);
             moveHorse(lane3Horse);
 
-            // make sure it ends if they all fuck up
-            // TODO: CREATE GAME-END CLAUSE THAT PRINTS DEPENDING ON STRING-STATUS
             if (lane1Horse.hasFallen() && lane2Horse.hasFallen() && lane3Horse.hasFallen()) {
                 finished = true;
                 raceWinner = "TIE";
@@ -101,7 +99,7 @@ public class Race
             //wait for 100 milliseconds
             try{ 
                 TimeUnit.MILLISECONDS.sleep(100);
-            }catch(Exception e){}
+            } catch(Exception ignored){}
         }
 
         printRaceResult();

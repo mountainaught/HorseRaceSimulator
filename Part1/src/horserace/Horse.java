@@ -10,7 +10,7 @@ import horserace.utils.Decimal;
  */
 public class Horse
 {
-    //Fields of class HorseRace.Horse
+    // Fields of class HorseRace.Horse
     private final String name;
     private char horseSymbol;
     private int distanceTravelled;
@@ -40,12 +40,12 @@ public class Horse
     public double getHorseConfidence()
     {
      return horseConfidence;
-    }
+    } // Returns Horse's Confidence
     
     public int getDistanceTravelled()
     {
         return distanceTravelled;
-    }
+    } // Returns Distance Travelled
     
     public String getName()
     {

@@ -134,7 +134,7 @@ public class Lane extends Pane {
         averageFinish = (averageFinish > 0.0) ? (( averageFinish + place ) / 2) : place;
     }
 
-    // Accessor Methods -- Retreival
+    // Accessor Methods -- Retrieval
     public int getWins() { return wins; }
     public int getFinishes() { return finishes; }
     public int getLastFinish() { return previousPlace; }

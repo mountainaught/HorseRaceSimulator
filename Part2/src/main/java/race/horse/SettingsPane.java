@@ -1,6 +1,5 @@
 package race.horse;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
@@ -35,7 +34,7 @@ public class SettingsPane implements Initializable {
 
     Image track = new Image("track.jpg");
 
-    public void onSaveAction(ActionEvent actionEvent) { // Saving a Horse's info
+    public void onSaveAction() { // Saving a Horse's info
 
         // Save the currently selected options as Strings - important as they are immune to null values at declaration.
         String horseName = horseNameField.getCharacters().toString();
@@ -79,7 +78,7 @@ public class SettingsPane implements Initializable {
 
     }
 
-    public void onAddAction(ActionEvent actionEvent) { // Setting things up to add a new horse
+    public void onAddAction() { // Setting things up to add a new horse
 
         if (Settings.LANE_COUNT >= Settings.MAX_LANE_COUNT) { // Make sure we're not over the limit.
             Utils.errorCall("Maximum Horse Amount Reached");
@@ -105,7 +104,7 @@ public class SettingsPane implements Initializable {
         Settings.LANE_COUNT--;
     }
 
-    // When a item is chosen (when you click within the listpane), it displays the relevant info.
+    // When an item is chosen (when you click within the listpane), it displays the relevant info.
     public void onChooseAction() {
         // Never a fun time with NullPointers.
         if (Objects.isNull(horseListPane.getSelectionModel().getSelectedItem())) {
@@ -165,7 +164,7 @@ public class SettingsPane implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) { drawSettingsPane(); }
 
-    public void onDefaultAction(ActionEvent actionEvent) {
+    public void onDefaultAction() {
         // Literally some random Default horses in case the user doesn't want to bother.
         Horse firstHorse = new Horse("Yuu", 0.6, "Black");
         Horse secondHorse = new Horse("Saeki", 0.8, "Brown");
