@@ -46,7 +46,7 @@ First to compile the Class files:
 
 Secondly, you execute:
 
-    java -p "manual\;lib\" --add-modules=javafx.controls,javafx.fxml -m race.horse/race.horse.Main
+    java -p "manual\;lib\" --add-modules=javafx.controls,javafx.fxml -m race.horse/race.horse.startRaceGUI
 
 
 ## Demo
