@@ -1,4 +1,7 @@
 # Horse Race Simulator
+
+## Made by Erhan Tibet Unal, Student ID 230621837
+
 This project is made of two parts:
 
  - Part 1: A simple, CLI-only horse race application.
