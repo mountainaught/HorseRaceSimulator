@@ -1,0 +1,13 @@
+.textFlow {
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-color: rgba(99, 99, 99, 1);
+    -fx-border-radius: 5px;
+}
+
+.vBox {
+    -fx-background-color: e7e7e7;
+    /* -fx-border-width: 2px;
+    -fx-border-color: b5b5b5;
+    -fx-border-radius: 4px; */
+}
