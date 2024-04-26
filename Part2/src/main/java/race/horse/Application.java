@@ -1,7 +1,6 @@
 package race.horse;
 
 import javafx.animation.AnimationTimer;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -31,7 +30,7 @@ public class Application implements Initializable {
     @FXML
     private VBox raceBox;
 
-    private ArrayList<Lane> horsesInRunning = new ArrayList<>();
+    private final ArrayList<Lane> horsesInRunning = new ArrayList<>();
 
     @FXML
     private TextFlow infoDisplay;
@@ -54,7 +53,7 @@ public class Application implements Initializable {
         infoDisplay.getChildren().add(text1);
     }
 
-    public void onStartAction(ActionEvent actionEvent) {
+    public void onStartAction() {
 
         if (raceOngoing) { // Error Checking - If a race is already under way.
             Utils.errorCall("There's already a race ongoing.");
