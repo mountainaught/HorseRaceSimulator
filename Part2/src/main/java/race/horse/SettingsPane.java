@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
  * <p>
  * A "Default" configuration option button is also present, in case the user wishes to skip Horse creation.
  * @author etunal
- * @version 1.2
+ * @version 1.3
  */
 
 public class SettingsPane implements Initializable {
@@ -32,6 +32,8 @@ public class SettingsPane implements Initializable {
 
     Horse currentHorse;
     Lane currentLane;
+
+    Image track = new Image("track.jpg");
 
     public void onSaveAction(ActionEvent actionEvent) { // Saving a Horse's info
 
@@ -66,7 +68,7 @@ public class SettingsPane implements Initializable {
         // The rest is just declaring a Horse/Lane pair, and adding them to the collective.
         currentHorse = new Horse(horseName, horseConfidence, color);
 
-        Lane newLane = new Lane(0, 0, Settings.RACE_LENGTH, currentHorse, new Image("nanami.png"));
+        Lane newLane = new Lane(0, 0, Settings.RACE_LENGTH, currentHorse, track);
         Settings.laneList.add(newLane);
         Settings.LANE_COUNT++;
 
@@ -167,16 +169,16 @@ public class SettingsPane implements Initializable {
         // Literally some random Default horses in case the user doesn't want to bother.
         Horse firstHorse = new Horse("Yuu", 0.6, "Black");
         Horse secondHorse = new Horse("Saeki", 0.8, "Brown");
-        Horse thirdHorse = new Horse("Kase", 0.4, "Black");
-        Horse fourthHorse = new Horse("Nico Bellic", 0.3, "Brown");
-        Horse fifthHorse = new Horse("CSE Student", 1.0, "Brown");
+        Horse thirdHorse = new Horse("Kase", 0.4, "Gray");
+        Horse fourthHorse = new Horse("Nico Bellic", 0.3, "Orange");
+        Horse fifthHorse = new Horse("CSE Student", 1.0, "White");
 
 
-        Lane firstLane = new Lane(firstHorse, new Image("nanami.png"));
-        Lane secondLane = new Lane(secondHorse, new Image("nanami.png"));
-        Lane thirdLane = new Lane(thirdHorse, new Image("nanami.png"));
-        Lane fourthLane = new Lane(fourthHorse, new Image("nanami.png"));
-        Lane fifthLane = new Lane(fifthHorse, new Image("nanami.png"));
+        Lane firstLane = new Lane(firstHorse, track);
+        Lane secondLane = new Lane(secondHorse, track);
+        Lane thirdLane = new Lane(thirdHorse, track);
+        Lane fourthLane = new Lane(fourthHorse, track);
+        Lane fifthLane = new Lane(fifthHorse, track);
 
         Settings.laneList.add(firstLane);
         Settings.laneList.add(secondLane);

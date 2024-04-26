@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="race.horse.SettingsPane">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+          <Button mnemonicParsing="false" onAction="#onAddAction" text="New Horse" />
+            <Button mnemonicParsing="false" onAction="#onRemoveAction" text="Remove" />
+            <Button mnemonicParsing="false" onAction="#onDefaultAction" text="Default" />
+        </items>
+      </ToolBar>
+      <BorderPane prefHeight="462.0">
+         <center>
+            <ListView fx:id="horseListPane" onMouseClicked="#onChooseAction" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </ListView>
+         </center>
+         <right>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: e9e9e9;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <Label layoutX="15.0" layoutY="14.0" text="Horse Name">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="horseNameField" layoutX="15.0" layoutY="33.0" />
+                  <Label layoutX="17.0" layoutY="82.0" text="Horse Color">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="horseColorPicker" layoutX="15.0" layoutY="101.0" prefWidth="150.0" />
+                  <Label layoutX="14.0" layoutY="153.0" text="Confidence">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="horseConfField" layoutX="12.0" layoutY="172.0" />
+                  <Button layoutX="12.0" layoutY="221.0" mnemonicParsing="false" onAction="#onSaveAction" text="Save" />
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+   </children>
+</VBox>

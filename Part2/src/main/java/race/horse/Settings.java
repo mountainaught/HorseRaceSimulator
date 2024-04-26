@@ -21,8 +21,11 @@ public class Settings {
 
     // Using a hashmap as a dictionary just for the horse images.
     static HashMap<String, Image> colorList = new HashMap<>() {{
-        put("Brown", new Image("saeki.jpg"));
-        put("Black", new Image("yuu_xs.png"));
+        put("Black", new Image("horse-black.png"));
+        put("Brown", new Image("horse-brown.png"));
+        put("Gray", new Image("horse-gray.png"));
+        put("Orange", new Image("horse-orange.png"));
+        put("White", new Image("horse-white.png"));
     }};
 
 }

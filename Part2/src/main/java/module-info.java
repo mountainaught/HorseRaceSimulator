@@ -1,4 +1,4 @@
-module net.horserace {
+module race.horse {
     requires javafx.controls;
     requires javafx.fxml;
 

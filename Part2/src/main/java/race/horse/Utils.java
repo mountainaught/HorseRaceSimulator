@@ -37,22 +37,6 @@ public class Utils {
         return true;
     }
 
-    // I can't really explain this one, I might delete it in the next version.
-    public static ArrayList<Text> stringToTextList(String string, Color color, Font font) {
-        String[] lines = string.split("\n");
-
-        ArrayList<Text> result = new ArrayList<>();
-
-        for (String s : lines) {
-            Text text = new Text(s + "\n");
-            text.setFill(color);
-            text.setFont(font);
-            result.add(text);
-        }
-
-        return result;
-    }
-
     // Check if a horse still exists. Used as a way of making sure duplicates don't cause headaches.
     public static Horse checkIfHorseExists(String horseName) {
         Horse horse = null;

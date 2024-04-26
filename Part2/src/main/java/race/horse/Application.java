@@ -23,7 +23,7 @@ import static race.horse.Settings.laneList;
 /**
  * The Horse Race program's primary Class. Application manages all submenus and functions.
  * @author etunal
- * @version 1.0
+ * @version 1.2
  */
 
 public class Application implements Initializable {
@@ -43,6 +43,7 @@ public class Application implements Initializable {
     private AnimationTimer gameLoop;
 
     boolean raceOngoing = false;
+    boolean settingsOpen = false;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -51,9 +52,6 @@ public class Application implements Initializable {
         text1.setFont(Font.font("Helvetica", FontPosture.ITALIC, 36));
 
         infoDisplay.getChildren().add(text1);
-
-        statDisplay.getChildren().addAll(Utils.stringToTextList("==========\nHi lol\n==========", Color.BLACK,
-                Font.font("Helvetica", FontWeight.NORMAL, 20)));
     }
 
     public void onStartAction(ActionEvent actionEvent) {
@@ -63,6 +61,9 @@ public class Application implements Initializable {
             return;
         } else if (laneList.isEmpty()) { // Error Checking - If no horses are present
             Utils.errorCall("There are no horses on track.");
+            return;
+        } else if (settingsOpen) { // Error Checking - if settings is still open
+            Utils.errorCall("Please close Settings first.");
             return;
         }
 
@@ -94,11 +95,11 @@ public class Application implements Initializable {
                         if (winner.isBlank()) { // If blank, tie
                             endResult = new Text("It's a tie!");
                         } else { // Else we have a winner! Put their name up there!
-                            endResult = new Text(winner);
+                            endResult = new Text("And the winner is:\n" + winner + "!");
                         }
 
                         // Nice big font for the Winning horse.
-                        endResult.setFont(Font.font("Helvetica", FontWeight.BOLD, FontPosture.ITALIC, 20));
+                        endResult.setFont(Font.font("Helvetica", FontWeight.BOLD, FontPosture.ITALIC, 18));
                         winnerDisplay.getChildren().add(endResult);
 
                         gameLoop.stop(); // Stop the Game Loop, as race has ended.
@@ -133,7 +134,19 @@ public class Application implements Initializable {
     }
 
     public void onSettingsAction() { // Launch settings menu. Basic JavaFX stage and scene setup.
-         Stage stage = new Stage();
+
+        if (settingsOpen) {
+            Utils.errorCall("Settings is already open.");
+            return;
+        }
+
+        if(raceOngoing) {
+            Utils.errorCall("There's a ongoing race!");
+            return;
+        }
+
+        Stage stage = new Stage();
+        settingsOpen = true;
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("settings-panel.fxml"));
@@ -145,6 +158,7 @@ public class Application implements Initializable {
         stage.setTitle("Settings");
         stage.showAndWait();
 
+        settingsOpen = false;
         setLanes(); // Reset the lanes on display.
 
         for (Lane lane : laneList) { // Clear the horses left on screen, as they haven't been updated for the new layout
