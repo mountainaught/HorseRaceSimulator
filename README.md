@@ -50,4 +50,5 @@ Secondly, you execute:
 
 
 ## Demo
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k0_FbJoyYQA?si=rqrPdUpjdmxTXUdb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+#### Click on the video below for a demonstration.
+[![Now in Android: 55](https://i.ytimg.com/vi/k0_FbJoyYQA/maxresdefault.jpg)](https://www.youtube.com/watch?v=k0_FbJoyYQA "Now in Android: 55")
