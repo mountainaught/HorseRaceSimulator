@@ -1,6 +1,6 @@
 package horserace;
 
-public class Main {
+public class startRace {
     public static void main(String[] args) {
         Race race = new Race(10);
 

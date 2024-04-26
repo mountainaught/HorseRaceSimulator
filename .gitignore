@@ -182,3 +182,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 Part2/pom.xml
+/Part1/.idea
