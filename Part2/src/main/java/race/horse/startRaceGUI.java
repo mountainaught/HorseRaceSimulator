@@ -13,7 +13,7 @@ import java.io.IOException;
  * @author etunal
  * @version 1.0
  */
-public class Main extends Application {
+public class startRaceGUI extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
