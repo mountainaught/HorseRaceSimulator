@@ -1,6 +1,6 @@
 # Horse Race Simulator
 
-## Made by Erhan Tibet Unal, Student ID 230621837
+## Heyo! I made this for my end-of-year project for ECS414U - OOP class!
 
 This project is made of two parts:
 
